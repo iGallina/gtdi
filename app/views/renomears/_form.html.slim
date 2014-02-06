@@ -1,0 +1,43 @@
+= simple_form_for(@nome_documento, html: {class: 'form-horizontal' }) do |f| 
+  - if @nome_documento.errors.any? 
+    #error_explanation
+      h2
+        = pluralize(@nome_documento.errors.count, "error")
+        | não permitiu esse processo de ser salvo:
+
+      ul
+        - @nome_documento.errors.full_messages.each do |msg| 
+          li
+            = msg
+
+  .field
+    = f.input :tipo, :collection => ['AVISO','CONTRATO','CONVENIO','DECRETO','DESPACHO','EDITAL','MEMORANDO','NOTA INFORMATIVA','NOTA TÉCNICA','OFICIO','PORTARIA'], :prompt => "Selecione", :label => "Tipo do Documento"
+  
+  .field
+    = f.input :assunto, :collection => @assuntos, :prompt => "Selecione", :label => "Assunto"
+  
+  .field
+    = f.input :data, :as => :datetime_picker, :label => "Data:"
+  
+  .field
+    = f.label "CPROD:"
+    br
+    = f.text_field :cprod 
+  
+  .field
+    = f.label "Sem CPROD ?:"
+    br
+    = f.check_box :sem_cprod 
+  
+  .field
+    = f.label "Mais de um processo ?:"
+    br
+    = f.check_box :mais_de_um_processo 
+  
+  .field
+    = f.label "Arquivo:"
+    br
+    = f.text_field :arquivo 
+  
+  .actions
+    = f.button :submit, "Novo Nome de arquivo"

@@ -1,0 +1,23 @@
+h1 Listagem de Notas Técnicas
+table.table.table-striped.table-hover
+  thead
+    tr
+      th Data da Nota
+      th Nº Nota
+      th Nº processo
+      th Status
+      th Nome do Analista
+      th Área
+      th
+  tbody
+    - @nota_tecnicas.each do |nota_tecnica| %
+      tr
+        td = nota_tecnica.data_nota
+        td = nota_tecnica.numero_nota
+        td = nota_tecnica.numero_processo
+        td = nota_tecnica.status
+        td = nota_tecnica.nome_do_analista
+        td = nota_tecnica.area
+        td = link_to 'Apagar', nota_tecnica, method: :delete, data: { confirm: 'Tem certeza?' }, :class => 'btn btn-danger btn-xs'
+br
+= link_to '+ Nota Técnica', new_nota_tecnica_path, :class => 'btn btn-warning'

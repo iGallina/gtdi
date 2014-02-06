@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  assunto: MyString
+  data: 2013-12-09 18:07:28
+  cprod: MyString
+  sem_cprod: false
+  mais_de_um_processo: false
+  arquivo: MyString
+
+two:
+  tipo: MyString
+  assunto: MyString
+  data: 2013-12-09 18:07:28
+  cprod: MyString
+  sem_cprod: false
+  mais_de_um_processo: false
+  arquivo: MyString

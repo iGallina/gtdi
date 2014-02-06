@@ -1,0 +1,32 @@
+= simple_form_for(@nota_tecnica, html: {class: 'form-horizontal' }) do |f|
+  - if @nota_tecnica.errors.any?
+    div#error_explanation
+      h2 
+        = pluralize(@nota_tecnica.errors.count, "error")
+        | não permitiu esse processo de ser salvo:
+
+      ul
+        - @nota_tecnica.errors.full_messages.each do |msg|
+          li
+            = msg
+
+  div.field
+    = f.label "Nome do Analista" 
+    br
+    = f.text_field :nome_do_analista 
+  div.field
+    = f.input :area, :collection => ['TÉCNICA', 'LEGAL'], :prompt => "Selecione", :label => "Área" 
+  div.field
+    = f.input :data_nota, :as => :datetime_picker, :label => "Data da Nota Técnica:"
+  div.field
+    = f.label "Nº da Nota" 
+    br
+    = f.text_field :numero_nota 
+  div.field
+    = f.label "Nº do Processo" 
+    br
+    = f.text_field :numero_processo 
+  div.field
+    = f.input :status, :collection => ['DEFERIDO', 'INDEFERIDO', 'EXIGÊNCIA', 'OUTRAS PROVIDÊNCIAS', 'EXPEDIDO', 'ENCAMINHADO_INTERNO', 'ENCAMINHADO_ANATEL', 'ENTRANTE'], :prompt => "Selecione", :label => "Status" 
+  div.actions
+    = f.button :submit, "Nova Nota Técnica"

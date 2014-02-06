@@ -1,0 +1,31 @@
+= simple_form_for(@entrante, html: {class: 'form-horizontal' }) do |f| 
+  - if @entrante.errors.any? 
+    div#error_explanation
+      h2 = pluralize(@entrante.errors.count, "error")
+      | não permitiu esse processo de ser salvo
+
+      ul 
+        - @entrante.errors.full_messages.each do |msg| 
+          li = msg
+  div.form-group
+    = f.label "Nº do Protocolo:"
+    br
+    = f.text_field :prot_doc
+ 
+  div.form-group
+    = f.input :dt_prot_doc, :placeholder => "#{Time.now.strftime("%d/%m/%Y")}", :label => "Data do Protocolo:", hint: 'Por padrão, data de hoje.'
+ 
+  div.form-group
+    = f.input :assunto, :collection => @assunto, :prompt => "Selecione", :label => "Assunto"
+ 
+  div.form-group
+    = f.input :procedimento, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO INTERNO', 'ENCAMINHADO ANATEL', 'ENTRANTE'], :prompt => "Selecione", :label => "Procedimento"
+ 
+  div.form-group
+    #processo_principal
+      = f.label "Processo Principal"
+      br
+      = f.text_field :processo_principal
+
+  div.actions
+    = f.button :submit, "Criar Ação"

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_nota: MyString
+  numero_nota: MyString
+  numero_processo: MyString
+  status: MyString
+  nome_do_analista: MyString
+  area: MyString
+
+two:
+  data_nota: MyString
+  numero_nota: MyString
+  numero_processo: MyString
+  status: MyString
+  nome_do_analista: MyString
+  area: MyString
