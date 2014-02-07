@@ -18,12 +18,9 @@ ActiveRecord::Schema.define(version: 20131226191155) do
 
   create_table "cargos", force: true do |t|
     t.string   "nome"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "cargos", ["user_id"], name: "index_cargos_on_user_id", using: :btree
 
   create_table "entrantes", force: true do |t|
     t.string   "prot_doc"
