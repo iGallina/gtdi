@@ -1,18 +1,18 @@
 
 development:
-  database: <%= ENV['DATABASE_USERNAME'] %>_test
+  database: gtdi_test
   adapter: postgresql
   username: postgres
   password: postgres
 
 test:
   adapter: postgresql
-  database: <%= ENV['DATABASE_USERNAME'] %>_development
+  database: gtdi_development
   username: postgres
   password: postgres
 
 production:
   adapter: postgresql
-  database: <%= ENV['DATABASE_USERNAME'] %>_production
+  database: gtdi_production
   username: postgres
   password: postgres
