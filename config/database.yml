@@ -6,8 +6,11 @@
 development:
   adapter: postgresql
   database: gtdi_devel
+  login: postgres
+  password: postgres
   pool: 5
   timeout: 5000
+  socket: /tmp/.s.PGSQL.5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -15,11 +18,17 @@ development:
 test:
   adapter: postgresql
   database: gtdi_test
+  login: postgres
+  password: postgres
   pool: 5
   timeout: 5000
+  socket: /tmp/.s.PGSQL.5432
 
 production:
   adapter: postgresql
   database: gtdi_prod
+  login: postgres
+  password: postgres
   pool: 5
   timeout: 5000
+  socket: /tmp/.s.PGSQL.5432
