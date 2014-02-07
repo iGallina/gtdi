@@ -36,21 +36,19 @@ html
             / li
             /   = link_to "Renomear", nome_documentos_path
 
-          ul.nav.navbar-nav.navbar-right
-            li              
-              - if user_signed_in?
-                | Logged in as 
-                  strong = current_user.user
-                  '.
-                li
-                  = link_to "Logout", destroy_user_session_path
-              - else
-                li
-                  = link_to "Login", new_user_session_path
+          ul.nav.navbar-nav.navbar-right              
+            - if user_signed_in?
+              li
+                h4
+                  span.label.label-default
+                    = current_user.nome
+              li
+                = link_to "Sair", destroy_user_session_path
+            - else
+              li
+                = link_to "Login", new_user_session_path
 
     .container.content
-        p.alert.alert-warning
-          = alert
         .row
           .span3
           .span9

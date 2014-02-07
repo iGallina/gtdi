@@ -1,6 +1,6 @@
 = simple_form_for(@entrante, html: {class: 'form-horizontal' }) do |f| 
   - if @entrante.errors.any? 
-    div#error_explanation
+    #error_explanation
       h2 = pluralize(@entrante.errors.count, "error")
       | não permitiu esse processo de ser salvo
 
