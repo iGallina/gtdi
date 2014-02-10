@@ -43,12 +43,15 @@ html
                   span.label.label-default
                     = current_user.nome
               li
-                = link_to "Sair", destroy_user_session_path
+                = link_to("Sair", destroy_user_session_path, :method => 'delete')
             - else
               li
                 = link_to "Login", new_user_session_path
 
     .container.content
+        - unless user_signed_in?
+          p.alert.alert-warning
+            = alert
         .row
           .span3
           .span9
