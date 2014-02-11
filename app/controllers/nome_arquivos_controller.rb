@@ -1,21 +1,21 @@
-class RenomearsController < ApplicationController
+class NomeArquivosController < ApplicationController
   before_filter :authenticate_user!
-  before_action :set_nome_documento, only: [:show, :edit, :update, :destroy]
+  before_action :set_nome_arquivo, only: [:show, :edit, :update, :destroy]
 
-  # GET /nome_documentos
-  # GET /nome_documentos.json
+  # GET /nome_arquivos
+  # GET /nome_arquivos.json
   def index
-    @nome_documentos = Renomear.all
+    @nome_arquivos = NomeArquivo.all
   end
 
-  # GET /nome_documentos/1
-  # GET /nome_documentos/1.json
+  # GET /nome_arquivos/1
+  # GET /nome_arquivos/1.json
   def show
   end
 
-  # GET /nome_documentos/new
+  # GET /nome_arquivos/new
   def new
-    @nome_documento = Renomear.new
+    @nome_arquivo = NomeArquivo.new
     @assuntos = ["Alteracao de Canal",
                 "Alteracao de Caracteristicas Tecnicas",
                 "Alteracao de Coordenadas Geograficas",
@@ -55,17 +55,17 @@ class RenomearsController < ApplicationController
                 "Transferencia Indireta"]
   end
 
-  # GET /nome_documentos/1/edit
+  # GET /nome_arquivos/1/edit
   def edit
   end
 
-  # POST /nome_documentos
-  # POST /nome_documentos.json
+  # POST /nome_arquivos
+  # POST /nome_arquivos.json
   def create
-    @nome_documento = Renomear.new(nome_documento_params)
+    @nome_arquivo = NomeArquivo.new(nome_arquivo_params)
 
     respond_to do |format|
-      if @nome_documento.save
+      if @nome_arquivo.save
         format.html { redirect_to action: :index, notice: 'Nome de Arquivo criado.' }
       else
         format.html { render action: 'new' }
@@ -73,38 +73,38 @@ class RenomearsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /nome_documentos/1
-  # PATCH/PUT /nome_documentos/1.json
+  # PATCH/PUT /nome_arquivos/1
+  # PATCH/PUT /nome_arquivos/1.json
   def update
     respond_to do |format|
-      if @nome_documento.update(nome_documento_params)
-        format.html { redirect_to @nome_documento, notice: 'Renomear was successfully updated.' }
+      if @nome_arquivo.update(nome_arquivo_params)
+        format.html { redirect_to @nome_arquivo, notice: 'Renomear was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @nome_documento.errors, status: :unprocessable_entity }
+        format.json { render json: @nome_arquivo.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /nome_documentos/1
-  # DELETE /nome_documentos/1.json
+  # DELETE /nome_arquivos/1
+  # DELETE /nome_arquivos/1.json
   def destroy
-    @nome_documento.destroy
+    @nome_arquivo.destroy
     respond_to do |format|
-      format.html { redirect_to nome_documentos_url }
+      format.html { redirect_to nome_arquivos_url }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_nome_documento
-      @nome_documento = Renomear.find(params[:id])
+    def set_nome_arquivo
+      @nome_arquivo = NomeArquivo.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def nome_documento_params
-      params.require(:nome_documento).permit(:tipo, :assunto, :data, :cprod, :sem_cprod, :mais_de_um_processo, :arquivo)
+    def nome_arquivo_params
+      params.require(:nome_arquivo).permit(:tipo, :assunto, :data, :cprod, :sem_cprod, :mais_de_um_processo, :arquivo)
     end
 end

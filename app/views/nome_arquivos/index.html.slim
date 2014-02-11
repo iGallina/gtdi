@@ -1,0 +1,28 @@
+h1 Listagem de Nome
+table.table.table-striped.table-hover
+  thead 
+    tr 
+      th Tipo
+      th Assunto
+      th Data
+      th Cprod
+      th Sem cprod
+      th Mais de um processo
+      th Nome do Arquivo
+      th
+  tbody 
+     - @nome_arquivos.each do |nome_arquivo|  
+      tr 
+        td = nome_arquivo.tipo  
+        td = nome_arquivo.assunto  
+        td = nome_arquivo.data.strftime("%m/%d/%Y")
+        td = nome_arquivo.cprod  
+        td = nome_arquivo.sem_cprod  
+        td = nome_arquivo.mais_de_um_processo  
+        td 
+          button.btn.btn-info.btn-xs PDF
+          | &nbsp;
+          button.btn.btn-info.btn-xs DOC
+        td = link_to 'Apagar', nome_arquivo, method: :delete, data: { confirm: 'Tem Certeza?' }, :class => 'btn btn-danger btn-xs'
+br
+= link_to '+ Nome de Arquivo', new_nome_arquivo_path, :class => 'btn btn-warning'

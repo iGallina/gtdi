@@ -1,7 +1,9 @@
 Produtividade::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, :skip => :registrations
   root :to => "entrantes#index"
-  resources :nome_documentos
+  resources :nome_arquivos
   resources :nota_tecnicas
   resources :entrantes
 

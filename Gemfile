@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Gemfile
+gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
+
 # Rack Server
 gem 'puma'
 

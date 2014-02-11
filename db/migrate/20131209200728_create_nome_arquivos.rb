@@ -1,6 +1,6 @@
-class CreateNomeDocumentos < ActiveRecord::Migration
+class CreateNomeArquivos < ActiveRecord::Migration
   def change
-    create_table :nome_documentos do |t|
+    create_table :nome_arquivos do |t|
       t.string :tipo
       t.string :assunto
       t.datetime :data
