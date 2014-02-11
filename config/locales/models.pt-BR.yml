@@ -1,0 +1,13 @@
+pt-BR:
+ activerecord:
+   models:
+     user: Usuário(s)
+     admin_user: Administrador(es)
+     setor: Setor(es)
+     nota_tecnica: Nota(s) Técnica(s)
+     cargo: Cargo(s)      
+     entrante: Entrante(s)
+     nome_arquivo: Nome do(s) Arquivo(s)
+   attributes:
+     setor:
+       nome: Teste
