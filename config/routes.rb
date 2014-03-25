@@ -1,4 +1,6 @@
 Produtividade::Application.routes.draw do
+  resources :canals
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :skip => :registrations

@@ -47,6 +47,7 @@ gem 'mini_magick'
 
 # XML
 gem 'nokogiri'
+gem 'mechanize'
 gem 'axlsx'
 
 group :doc do

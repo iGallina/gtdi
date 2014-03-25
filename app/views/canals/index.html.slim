@@ -1,0 +1,17 @@
+h1 Listing canals
+
+table
+  tr
+    th
+    th
+    th
+
+  - @canals.each do |canal|
+    tr
+      td = link_to 'Show', canal
+      td = link_to 'Edit', edit_canal_path(canal)
+      td = link_to 'Destroy', canal, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Canal', new_canal_path
