@@ -21,11 +21,11 @@ class CreateChannels < ActiveRecord::Migration
       t.string :indcoordprefixada
       t.string :frequencia
       t.string :mederpmax
-      t.string :deschistorico
+      t.text :deschistorico
       t.text :txtobservacao
       t.string :numconcorrencia
       t.string :anoconcorrencia
-      t.string :nomeinteressada
+      t.text :nomeinteressada
       t.string :indcoordemsitio
       t.string :medlatitudeemsitio
       t.string :medlongitudeemsitio
@@ -43,16 +43,16 @@ class CreateChannels < ActiveRecord::Migration
       t.string :horarioinicio2
       t.string :horariofim2
       t.string :numcnpjcpf
-      t.string :nomeentidade
+      t.text :nomeentidade
       t.string :numfistel
       t.string :numfistelservicoprincipal
       t.string :numprocesso
-      t.string :txtcomentario
+      t.text :txtcomentario
       t.string :numprocessomc_srd
       t.string :numprocessoportariamc_srd
       t.string :numscradjur
       t.string :numscradtec
-      t.string :datacontrato
+      t.date :datacontrato
       t.string :datalimiteinstalacao
       t.string :endlogradouro_sede
       t.string :endnumero_sede
@@ -71,7 +71,10 @@ class CreateChannels < ActiveRecord::Migration
       t.string :siglasituacao
       t.string :idtpareamento
       t.string :cod_municipio
-      t.string :canal_publico 
+      t.string :canal_publico
+      t.string :uniao
+      t.string :carater
+      t.string :ibge6
       t.timestamps
     end
   end

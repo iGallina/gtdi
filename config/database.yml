@@ -4,13 +4,6 @@ development:
   adapter: postgresql
   username: postgres
   password: postgres
-
-test:
-  adapter: postgresql
-  database: gtdi_development
-  username: postgres
-  password: postgres
-
 production:
   adapter: postgresql
   database: gtdi_production

@@ -22,7 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
-gem "slim-rails"
+gem 'slim-rails'
 gem 'simple_form'
 gem 'never_wastes'
 gem 'maskedinput-rails'
@@ -49,6 +49,7 @@ gem 'mini_magick'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'axlsx'
+gem 'diffy'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -62,7 +63,7 @@ end
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-# gem 'capistrano', group: :development
+gem 'capistrano', group: :development
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
